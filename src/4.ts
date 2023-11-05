@@ -5,23 +5,23 @@ class Key {
     this.signature = Math.random();
   }
 
-  getSignature() {
-    this.signature;
+  getSignature(): number {
+    return this.signature;
   }
 }
 
 class Person {
   constructor(private key: Key) {}
 
-  getKey() {
+  getKey(): Key {
     return this.key;
   }
 }
 
 abstract class House {
-  door: boolean;
-  key: Key;
-  tenants: Person[] = [];
+  public door: boolean = false;
+  protected key: Key;
+  private tenants: Person[] = [];
 
   constructor(key: Key) {
     this.key = key;
